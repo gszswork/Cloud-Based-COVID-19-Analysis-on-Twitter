@@ -1,0 +1,33 @@
+# deploy harvester
+#
+#
+
+
+#run to retrieve historical data from MRC(provided by teaching team)
+- hosts: Masternode
+  vars_files:
+    - host_vars/environment_variables.yaml
+  gather_facts: true
+
+  roles:
+    - role: twitter-harvester-mrc
+
+
+#run to retrieve tweets post in victoria
+- hosts: instance3
+  vars_files:
+    - host_vars/environment_variables.yaml
+  gather_facts: true
+
+  roles:
+    - role: twitter-harvester-api
+
+
+#run to retrieve stream data for heatmap   
+- hosts: instance2
+  vars_files:
+    - host_vars/environment_variables.yaml
+  gather_facts: true
+
+  roles:
+    - role: twitter-harvester-api-streamer

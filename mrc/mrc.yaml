@@ -1,0 +1,29 @@
+#Setting up instance, install Docker , set up couchDB
+- hosts: localhost
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
+  vars_files:
+    - host_vars/mrc.yaml
+  gather_facts: true
+
+
+# set up instance
+  roles:
+    - role: openstack-common
+    - role: openstack-images
+    - role: openstack-volume
+    - role: openstack-security-group
+    - role: openstack-instance
+    #- role: openstack-volume-snapshot
+
+- hosts: DataNodes
+  vars_files:
+    - host_vars/couchdb_settings.yaml
+  gather_facts: true
+
+  roles:
+    - role: nodes-common
+    - role: nodes-docker-install
+    - role: nodes-volume-mount
+    - role: couchdb-setup
+

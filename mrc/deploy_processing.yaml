@@ -1,0 +1,13 @@
+#For deploying processing mode: instance4
+#
+- hosts: ProcessingNodes
+  vars_files:
+    - host_vars/environment_variables.yaml
+  gather_facts: true
+
+  roles:
+    - role: nodes-common
+    - role: nodes-docker-install
+    - role: nodes-volume-mount
+    - role: frontend-setup
+    - role: data-analysis

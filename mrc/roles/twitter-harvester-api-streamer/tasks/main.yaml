@@ -1,0 +1,59 @@
+#
+# Part of Assignment 2 - COMP90024 course at The University of Melbourne 
+#
+# Cluster and Cloud Computing - Team 24 
+#Get the tweets from streamer to retrieve twitter from streamer
+---
+# Clone source code repository
+- name: Clone the code repository into home directory
+  git:
+    repo: "https://github.com/Iodachi/comp90024.git"
+    dest: /home/ubuntu/comp90024
+  environment: "{{ proxy_env }}"
+  become: true
+
+# Create Docker config directory
+- name: Make sure that Docker config directory exists
+  become: yes
+  file:
+    path: '~/.docker'
+    state: 'directory'
+
+# Set Docker proxy for University of Melbourne Research Cloud
+- name: Ensure Docker client proxy settings are present on the server
+  become: yes
+  copy:
+    content: "{{ docker_proxy_settings }}"
+    dest: ~/.docker/config.json
+
+#Build Docker image for tweet harvester
+- name: Build an image and push it to local repo
+  docker_image:
+    state: present
+    build:
+      path: '/home/ubuntu/comp90024/get_from_api/streamer'
+      pull: yes
+    name: streamer
+    tag: latest
+    source: build
+  become: yes
+  environment: "{{ proxy_env }}"
+
+# Stop existing Docker containers for Twitter Harvesters and remove them (if any)
+- name: Stop Twitter Harvester Docker container
+  become: yes
+  docker_container:
+    name: streamercontainer
+    state: absent
+
+
+
+# Create new docker container for Twitter Harvester and start container
+- name: Create and start Twitter Harvester Docker container
+  become: yes
+  docker_container:
+    name: streamercontainer
+    image: streamer
+    state: started
+    pull: false
+    recreate: true

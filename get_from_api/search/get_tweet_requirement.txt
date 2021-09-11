@@ -1,0 +1,5 @@
+tweepy
+
+couchdb
+
+requests

@@ -1,0 +1,88 @@
+
+---
+# Clone source code repository
+- name: Clone the code repository into home directory
+  git:
+    repo: "https://github.com/Iodachi/comp90024.git"
+    dest: /home/ubuntu/comp90024
+  environment: "{{ proxy_env }}"
+  become: true
+
+# Create Docker config directory
+- name: Make sure that Docker config directory exists
+  become: yes
+  file:
+    path: '~/.docker'
+    state: 'directory'
+
+# Set Docker proxy for University of Melbourne Research Cloud
+- name: Ensure Docker client proxy settings are present on the server
+  become: yes
+  copy:
+    content: "{{ docker_proxy_settings }}"
+    dest: ~/.docker/config.json
+
+
+# #Build Docker image for frontend
+- name: Build an image and push it to local repo
+  docker_image:
+    state: present
+    build:
+      path: '/home/ubuntu/comp90024/frontend'
+      pull: yes
+    name: frontend
+    tag: latest
+    source: build
+  become: yes
+  environment: "{{ proxy_env }}"
+
+
+# Stop existing Docker containers for frontend and remove them (if any)
+- name: Stop frontend Docker container
+  become: yes
+  docker_container:
+    name: frontendcontainer
+    state: absent
+
+# Create new docker container for frontend and start container
+- name: Create and start Twitter Harvester Docker container
+  become: yes
+  docker_container:
+    name: frontendcontainer
+    image: frontend
+    state: started
+    published_ports : 80:3000
+    pull: false
+    recreate: true
+
+#Build Docker image for backend
+- name: Build an image and push it to local repo
+  docker_image:
+    state: present
+    build:
+      path: '/home/ubuntu/comp90024/backend'
+      pull: yes
+    name: backend
+    tag: latest
+    source: build
+  become: yes
+  environment: "{{ proxy_env }}"
+
+
+# Stop existing Docker containers for backend and remove them (if any)
+- name: Stop backend Docker container
+  become: yes
+  docker_container:
+    name: backendcontainer
+    state: absent
+
+# Create new docker container for backend and start container
+- name: Create and start Twitter Harvester Docker container
+  become: yes
+  docker_container:
+    name: backendcontainer
+    image: backend
+    published_ports : 8000:8000
+    state: started
+    pull: false
+    recreate: true
