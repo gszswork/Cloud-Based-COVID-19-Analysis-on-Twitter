@@ -30,8 +30,6 @@
     A cloud based COVID-19 Analysis, implemented by React, Django, CouchDB
     <br />
     
-    <br />
-    <br />
 
   </p>
 </p>
