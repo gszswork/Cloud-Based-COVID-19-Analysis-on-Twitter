@@ -68,8 +68,7 @@
 ## About The Project
 
 ![alt text](images/screenshot.png)
-
-This is a Tax Forum Website System finished in 2018, during my summor internship in Shandong University Website Labortory, in a group of four. I majorred in the back-end. This website is the primary version of Anhui Provincial Tax Service Weibsite's communication part, aims to help small and medium-sized enterprises conduct financial consulting and experience exchanges. 
+This is a cloud-based Web COVID-19 Analysis System finished in 2021, including backend and frontend. The system works on data collected from Australian Urban Research Institution Network (AURIN), and demonstrates 4 COVID-19 related scenarios, top frequently used words in Tweets, COVID cases and heatmaps, LGA development analysis, sentiment analysis. 
 
 The functions include:
 * Users register and login, website managers (administrators) authority.  
