@@ -71,9 +71,10 @@
 This is a cloud-based Web COVID-19 Analysis System finished in 2021, including backend and frontend. The system works on data collected from Australian Urban Research Institution Network (AURIN), and demonstrates 4 COVID-19 related scenarios, top frequently used words in Tweets, COVID cases and heatmaps, LGA development analysis, sentiment analysis. 
 
 The functions include:
-* Users register and login, website managers (administrators) authority.  
-* Users can communicate between users via messaging, posting, replying to posts. Users can ask questions to experts for replies. 
-* Managers can edit can delete users' posts and replies. Manager can edit users' access and block users who behave illegally.
+* Data Collection by clawer and Twitter API. 
+* Data Storage by CouchDB. 
+* Data Process and Analysis by MapReduce, NLP algorithms.
+* Data Visualization by React.js frontend. 
 
 
 ### Built With
