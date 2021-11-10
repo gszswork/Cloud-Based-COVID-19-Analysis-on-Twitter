@@ -1,7 +1,4 @@
 """
-@Author: Guangzheng Hu
-Student ID: 692277
-
 Description: Provide a CouchDB service: connecting, getting, creating a database.
 """
 import couchdb

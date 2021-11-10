@@ -1,7 +1,4 @@
 """
-@Author: Guangzheng Hu
-Student ID: 692277
-
 Description: This file is an experienment file that process datas and save them into CoudhDB
 """
 from couchDbHandler import *

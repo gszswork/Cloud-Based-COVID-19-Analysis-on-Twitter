@@ -1,7 +1,4 @@
 """
-@Author: Guangzheng Hu
-Student ID: 692277
-
 Description: This file defines functions that helps Django view to process retrieved data into JSON format.
 """
 

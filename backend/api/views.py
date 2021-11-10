@@ -1,7 +1,4 @@
 """
-@Author: Guangzheng Hu
-Student ID: 692277
-
 Description: This file defines Django views that process RESTful data received from the frontend and return coorsponding URLs which contians retrieved JSON data.
 """
 from django.shortcuts import render
