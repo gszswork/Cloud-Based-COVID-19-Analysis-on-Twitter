@@ -80,7 +80,7 @@ The functions include:
 * Data Visualization by React.js frontend. 
 
 #### Technology Stack Graph
-![alt text](images/Technology Stack.jpg)
+![alt text](images/TechStack.jpg)
 
 ### Built With
 
