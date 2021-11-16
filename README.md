@@ -49,19 +49,9 @@
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#getting-started">Getting Started</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgements">Acknowledgements</a></li>
   </ol>
 </details>
 
@@ -99,21 +89,35 @@ This section should list any major frameworks that you built your project using.
 This is an example of how you may give instructions on setting up your project locally.
 To get a local copy up and running follow these simple example steps.
 
-### Prerequisites
+The user can use the following Ansible playbook for deployment:
 
-Install the prerequisites
-* Install Tomcat 7.0 and IDE (eg. Eclipse)
-* Install Oracle MySQL
-
-### Installation
-
-1. GET your IDE ready with Topcat 7.0
-2. Clone the repo
+1. 
    ```sh
-   git clone https://github.com/gszswork/taxSystem.git
+   ./run-nectar.sh
    ```
-3. Link your MySQL database on and load the database.
-4. Run the project on Server
+   
+    This is for setting up 4 instances. Installing Docker and setting up CouchDB
+in instance 1,2 and 3
+
+2. 
+   ```sh
+    ./deploy_cluster.sh
+   ```
+   This is for setting up the CouchDB cluster.
+
+3. 
+   ```sh
+   ./run_crawler_cloud.sh
+   ```
+   This is for deploying the twitter Harvester in instance 1, 2 and 3.
+  
+4. 
+   ```sh
+    ./deploy_processing.sh
+   ```
+   This is for installing Docker, deploying data analyser and data
+visualization in instance 4.
+
 
 
 
@@ -130,7 +134,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 Your Name - danielkung1997@gmail.com
 
-Project Link: [https://github.com/gszswork/taxSystem](https://github.com/gszswork/taxSystem)
+Project Link: [https://github.com/gszswork/Cloud-Based-COVID-19-Analysis-on-Twitter](https://github.com/gszswork/Cloud-Based-COVID-19-Analysis-on-Twitter)
 
 
 
