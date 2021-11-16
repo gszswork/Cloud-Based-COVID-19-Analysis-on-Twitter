@@ -27,7 +27,7 @@
   <h3 align="center">Cloud-Based-COVID-19-Analysis-on-Twitter</h3>
 
   <p align="center">
-    A cloud based COVID-19 Analysis, implemented by React, Django, CouchDB
+    A cloud based COVID-19 Analysis, implemented by React, Django, CouchDB (Group Work in Subject Cluster Cloud Computing, UniMelb)
     <br />
     <br />
     <a href="https://www.youtube.com/watch?v=BRnL2CP1ovQ"><strong>Demonstration video of the frontend visualisation and scenarios analysis »</strong></a>
