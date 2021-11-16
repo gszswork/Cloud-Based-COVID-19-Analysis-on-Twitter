@@ -29,7 +29,10 @@
   <p align="center">
     A cloud based COVID-19 Analysis, implemented by React, Django, CouchDB
     <br />
-    
+    <br />
+    <a href="https://www.youtube.com/watch?v=BRnL2CP1ovQ"><strong>Demonstration video of the frontend visualisation and scenarios analysis »</strong></a>
+    <br />
+    <br />
 
   </p>
 </p>
@@ -67,7 +70,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-![alt text](images/screenshot.png)
+
 This is a cloud-based Web COVID-19 Analysis System finished in 2021, including backend and frontend. The system works on data collected from Australian Urban Research Institution Network (AURIN), and demonstrates 4 COVID-19 related scenarios, top frequently used words in Tweets, COVID cases and heatmaps, LGA development analysis, sentiment analysis. 
 
 The functions include:
@@ -76,15 +79,18 @@ The functions include:
 * Data Process and Analysis by MapReduce, NLP algorithms.
 * Data Visualization by React.js frontend. 
 
+#### Technology Stack Graph
+![alt text](images/Technology Stack.jpg)
 
 ### Built With
 
 This section should list any major frameworks that you built your project using. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
-* [Java Server Page (JSP)](https://www.oracle.com/java/technologies/jspt.html)
-* [HTML5](https://html5.org/)
-* [Tomcat 7.0](http://tomcat.apache.org/)
 * [MySQL](https://www.oracle.com/au/mysql/)
-
+* [React.js](https://reactjs.org/)
+* [HTML5](https://html5.org/)
+* [couchDB](http://couchdb.apache.org/)
+* [django](https://www.djangoproject.com/)
+* [docker](https://www.djangoproject.com/)
 
 
 <!-- GETTING STARTED -->
